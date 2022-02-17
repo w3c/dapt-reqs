@@ -1,2 +1,2 @@
 # dapt-reqs
-Requirements on Dubbing and Audio description Profiles of TTML2
+Requirements for the Dubbing and Audio description Profiles of TTML2
