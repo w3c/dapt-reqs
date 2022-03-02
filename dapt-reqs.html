@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DAPT Requirements</title>
+    <script
+      src="https://www.w3.org/Tools/respec/respec-w3c"
+      class="remove"
+      defer
+    ></script>
+    <script class="remove">
+      // All config options at https://respec.org/docs/
+      var respecConfig = {
+        specStatus: "DNOTE",
+        editors: [
+            { name: "Cyril Concolato", w3cid: "36324", mailto: "cconcolato@netflix.com" },
+            { name: "Nigel Megitt", w3cid: "64750", mailto: "nigel.megitt@bbc.co.uk"}
+        ],
+        github: {
+            repoURL : "https://github.com/w3c/dapt-reqs/",
+            branch : "main"
+        },
+        shortName: "dapt-reqs",
+        noRecTrack: true,
+        xref: "web-platform",
+        group: "wg/timed-text",
+        subjectPrefix: "[dapt-reqs]",
+      };
+    </script>
+    <style>
+        table.coldividers td + td { border-left:1px solid gray; text-align: center;}
+        table.syntax { border: 0px solid black; width: 85%; border-collapse: collapse }
+        table.syntax caption { font-weight: bold; text-align: left; padding-bottom: 0.5em }
+        table.syntax th { border: 0px solid black; text-align: left }
+        table.syntax td { border: 0px solid black }
+        table.syntax div { background-color: #ffffc8 }
+      </style>
+    </head>
+  <body>
+    <section id="abstract">
+      <p>This document captures technical requirements for a profile of TTML2 for use
+          in workflows related to dubbing and audio description of movies and videos.</p>
+    </section>
+    <section id="sotd">
+      <p>This is required.</p>
+    </section>
+    <section class="informative">
+      <h2>Introduction</h2>
+      <p>W3C members have identified the need for a profile of TTML for the exchange of timed text content
+          in the context of audio description or dubbing applications.
+          This document is based on the work of the
+          <a href="https://www.w3.org/community/audio-description/">Audio Description Community Group</a>
+          and on member publications [2].</p>
+      <aside class="note" title="A useful note">
+        <p>I'm a note!</p>
+      </aside>
+    </section>
+    <section>
+        <h2>Workflow</h2>
+        <p>The following diagram illustrates a hypothetical combined workflow
+          for the authoring and exchange of timed text content
+          for each of
+          1) audio description and
+          2) dubbing applications.</p>
+        <p>The blue rectangles with labels preceded by a number represent various manual or automated processes.
+           Processes specific to Audio Description or Dubbing workflows are marked respectively with AD or DUB.
+           Those not marked as AD or DUB are common to both workflows.
+           The green boxes with a wave underside represent timed text scripts produced by the various processes
+           and expected to be compliant to the profile definition.
+           The white boxes with a wave underside are media data used or produced in the workflows
+           but whose format is out of scope for the profile.</p>
+        <figure id='fig-workflow'>
+            <img src="figures/workflow-fig.svg" alt="Figure showing worflows for Audio Description and Dubbing, explained further in text below.">
+
+            <figcaption>
+                Hypothetical combined workflow for audio description and dubbing.
+            </figcaption>
+        </figure>
+        <p>The following table provides more detailed information on each step.</p>
+        <table class="simple">
+            <thead>
+                <tr>
+                    <td  colspan="1" rowspan="1"><p><span>Data being authored or modified</span></p>
+                    </td>
+                    <td  colspan="1" rowspan="1"><p><span>Process step</span></p>
+                    </td>
+                    <td  colspan="1" rowspan="1"><p><span>Applies to AD?</span></p>
+                    </td>
+                    <td  colspan="1" rowspan="1"><p><span>Applies to Dubbing?</span></p>
+                    </td>
+                    <td  colspan="1" rowspan="1"><p><span>Description</span></p>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td  colspan="1" rowspan="1"><p><span>Times</span></p>
+                    </td>
+                    <td  colspan="1" rowspan="1"><p><span>1. Identify key times in programme dialog, mark gaps</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><ul><li><span>Automatically</span><span>&nbsp;or manually process the programme audio track to identify intervals either with spoken dialogs to be translated or within which description audio may be inserted.</span></li></ul>
+                </tr>
+                <tr>
+                    <td  colspan="1" rowspan="4"><p><span>Text</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>2a. Describe images (AD)</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><p><span></span></p>
+                    <td  colspan="1" rowspan="1"><ul><span>Write a set of descriptions to fit within the identified gaps.</span></li></ul>
+                </tr>
+                <tr>
+                    <td  colspan="1" rowspan="1"><p><span>2b. Transcribe original text (DUB)</span></p>
+                    <td  colspan="1" rowspan="1"><p><span></span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><ul><li><span>Transcribe the dialogue in the original language to create a source transcription text</span></li><li><span>Notate dialogue events with character information and other annotations</span></li><li><span>Generate localization notes to guide further adaptation</span></li></ul>
+                </tr>
+                <tr>
+                    <td  colspan="1" rowspan="1"><p><span>2c. Translate text (DUB)</span></p>
+                    <td  colspan="1" rowspan="1"><p><span></span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p><p><span></span></p>
+                    <td  colspan="1" rowspan="1"><ul><li><span>Translate the dialogue to a target language</span></li></ul>
+                </tr>
+                <tr>
+                    <td  colspan="1" rowspan="1"><p><span>2d. Adapt text (DUB)</span></p>
+                    <td  colspan="1" rowspan="1"><p><span></span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><ul><li><span>Adapt the translation to the dubbing; </span><span>ex.</span><sup></sup><span>&nbsp;matching the actor&rsquo;s lip movements in the case of dubs and considering reading speeds and shot changes.</span></li></ul>
+                </tr>
+                <tr>
+                    <td  colspan="1" rowspan="1"><p><span>Audio</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>3. Voice recording or synthesize audio</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><ul><li><span>Generate an audio rendition of the script either by using an actor or voicer and recording the speech or synthesize the audio description by using a text to speech system. For audio descriptions, this is typically a mono audio track that may be delivered as a single track that is the same duration as the programme or as a set of short audio tracks each beginning at a defined time. Alternatively it can be a single track with each short description concatenated to remove unnecessary silences.</span></li></ul>
+                </tr>
+                <tr>
+                    <td  colspan="1" rowspan="2"><p><span>Text</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>4. Define audio mixing instructions (AD)</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><p><span></span></p>
+                    <td  colspan="1" rowspan="1"><ul><li><span>Select a horizontal pan position to apply to the audio rendition of the description when mixing with the main programme audio. This is typically a single value that applies to each description.</span></li><li><span>Select the amount by which to lower the main programme audio prior to mixing in the description audio. This is typically defined as a curve defined by a set of moments in time and fade levels to apply, with an interpolation algorithm to vary the levels between each moment in time.</span></li></ul>
+                </tr>
+                <tr>
+                    <td  colspan="1" rowspan="1"><p><span>5. Edit script to match performance </span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><p><span>X</span></p>
+                    <td  colspan="1" rowspan="1"><ul><li><span>Adjust the script based on changes made during the audio recording, to produce a script sometimes called &ldquo;As-recorded script&rdquo;.</span></li></ul>
+                </tr>
+            </tbody>
+        </table>
+        <table>
+            <thead>
+                <tr>
+
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+      <aside class="example">
+        <p>This is an example.</p>
+        <pre class="js">
+        // Automatic syntax highlighting
+        function someJavaScript(){}
+        </pre>
+      </aside>
+      <section>
+        <h3>I'm a sub-section</h3>
+        <p class="issue" data-number="121">
+          <!-- Issue can automatically be populated from GitHub -->
+        </p>
+      </section>
+    </section>
+    <section data-dfn-for="Foo">
+      <h2>Start your spec!</h2>
+      <pre class="idl">
+        [Exposed=Window]
+        interface Foo {
+        attribute DOMString bar;
+        undefined doTheFoo();
+        };
+      </pre>
+      <p>The <dfn>Foo</dfn> interface represents a {{Foo}}.</p>
+      <p>
+        The <dfn>doTheFoo()</dfn> method does the foo. Call it by running
+        {{Foo/doTheFoo()}}.
+      </p>
+      <ol class="algorithm">
+        <li>A |variable:DOMString| can be declared like this.</li>
+      </ol>
+    </section>
+    <section id="conformance">
+      <p>
+        This is required for specifications that contain normative material.
+      </p>
+    </section>
+  </body>
+</html>
