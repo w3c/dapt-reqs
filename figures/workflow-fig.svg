@@ -15,15 +15,12 @@
   </defs>
   <metadata> Produced by OmniGraffle 7.18.6\n2022-03-03 12:41:10 +0000</metadata>
   <g id="Canvas_1" stroke-dasharray="none" stroke="none" stroke-opacity="1" fill="none" fill-opacity="1">
-    <title>Canvas 1</title>
     <rect fill="white" x="10.935696" y="10.093176" width="549.4725" height="608.2126"/>
     <g id="Canvas_1_Layer_1">
-      <title>Layer 1</title>
       <g id="Graphic_133">
         <rect x="11.435696" y="10.593176" width="548.4725" height="607.2126" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
       </g>
       <g id="Graphic_131">
-        <title>Bézier</title>
         <path d="M 331.5223 14.900263 L 404.85458 14.900263 L 404.85458 39.151063 C 368.18844 39.151063 368.18844 48.391065 331.5223 43.141065 Z" fill="white"/>
         <path d="M 331.5223 14.900263 L 404.85458 14.900263 L 404.85458 39.151063 C 368.18844 39.151063 368.18844 48.391065 331.5223 43.141065 Z" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
         <text transform="translate(336.5223 15.754836)" fill="black">
