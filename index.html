@@ -92,7 +92,9 @@
           for each of
           1) audio description and
           2) dubbing applications.</p>
-        <p>The blue rectangles with labels preceded by a number represent various manual or automated processes. Clicking on a process rectangle will take the reader to a detailed description of the process from the table below.
+        <p>The contents of the diagram are fully described in the paragraphs that follow: it is provided as a visual summary only.</p>
+        <p>The blue rectangles with labels preceded by a number represent various manual or automated processes.
+           Clicking on a process rectangle will take the reader to a detailed description of the process from the table below.
            Processes specific to Audio Description or Dubbing workflows are marked respectively with AD or DUB.
            Those not marked as AD or DUB are common to both workflows.
            The green boxes with a wave underside represent timed text scripts produced by the various processes
@@ -107,119 +109,112 @@
                 Hypothetical combined workflow for audio description and dubbing.
             </figcaption>
         </figure>
-        <p>The following table provides more detailed information on each step.</p>
-        <table class="simple">
-            <thead>
-                <tr>
-                    <th colspan="1" rowspan="1">Data being authored or modified</th>
-                    <th colspan="1" rowspan="1">Process step</th>
-                    <th colspan="1" rowspan="1">Applies to AD?</th>
-                    <th colspan="1" rowspan="1">Applies to Dubbing?</th>
-                    <th colspan="1" rowspan="1">Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="1" rowspan="1">Times</td>
-                    <td colspan="1" rowspan="1"><dfn>PS1</dfn>. Identify key times in programme dialog, mark gaps
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">
-                        <ul>
-                            <li>Automatically or manually process the programme audio track
-                                to identify intervals either with spoken dialogs
-                                to be translated or within which description audio may be inserted.</li>
-                        </ul>
-                </tr>
-                <tr>
-                    <td colspan="1" rowspan="4">Text
-                    <td colspan="1" rowspan="1"><dfn>PS2a</dfn>. Describe images (AD)
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">
-                    <td colspan="1" rowspan="1"><ul>Write a set of descriptions to fit within the identified gaps.</li></ul>
-                </tr>
-                <tr>
-                    <td colspan="1" rowspan="1"><dfn>PS2b</dfn>. Transcribe original text (DUB)
-                    <td colspan="1" rowspan="1">
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">
-                        <ul>
-                            <li>Transcribe the dialogue in the original language to create a source transcription text</li>
-                            <li>Notate dialogue events with character information and other annotations</li>
-                            <li>Generate localization notes to guide further adaptation</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="1" rowspan="1"><dfn>PS2c</dfn>. Translate text (DUB)
-                    <td colspan="1" rowspan="1">
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">
-                        <ul>
-                            <li>Translate the dialogue to a target language</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="1" rowspan="1"><dfn>PS2d</dfn>. Adapt text (DUB)
-                    <td colspan="1" rowspan="1">
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">
-                        <ul>
-                            <li>Adapt the translation to the dubbing; for example
-                                matching the actor's lip movements in the case of dubs
-                                and considering reading speeds and shot changes.</li>
-                        </ul>
-                </tr>
-                <tr>
-                    <td colspan="1" rowspan="1">Audio
-                    <td colspan="1" rowspan="1"><dfn>PS3</dfn>. Voice recording or synthesize audio
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">
-                        <ul>
-                            <li>Generate an audio rendition of the script
-                                either by using an actor or voicer and recording the speech
-                                or synthesize the audio description by using a text to speech system.
-                                For audio descriptions, this is typically a mono audio track
-                                that may be delivered as a single track that is the same duration as the programme
-                                or as a set of short audio tracks each beginning at a defined time.
-                                Alternatively it can be a single track with each short description concatenated
-                                to remove unnecessary silences.</li>
-                        </ul>
-                </tr>
-                <tr>
-                    <td colspan="1" rowspan="2">Text
-                    <td colspan="1" rowspan="1"><dfn>PS4</dfn>. Define audio mixing instructions (AD)
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">
-                    <td colspan="1" rowspan="1">
-                        <ul>
-                            <li>Select a horizontal pan position to apply to the audio rendition
-                                of the description when mixing with the main programme audio.
-                                This is typically a single value that applies to each description.</li>
-                            <li>Select the amount by which to lower the main programme audio
-                                prior to mixing in the description audio.
-                                This is typically defined as a curve defined by a set of moments in time
-                                and fade levels to apply,
-                                with an interpolation algorithm to vary the levels between each moment in time.</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="1" rowspan="1"><dfn>PS5</dfn>. Edit script to match performance 
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">X
-                    <td colspan="1" rowspan="1">
-                        <ul>
-                            <li>Adjust the script based on changes made during the audio recording,
-                                to produce a script sometimes called <dfn>As-recorded script</dfn>.</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+        <section>
+          <h3><dfn>PS1</dfn>. Identify key times in programme dialog, mark gaps</h3>
+          <p>This step is in both the Audio Description and Dubbing workflows.</p>
+          <p>The data output of this step is a set of <a>events</a>.</p>
+          <p>In this step, the programme audio track is automatically or manually processed
+            to identify intervals either with spoken dialogs
+            to be translated or within which description audio may be inserted.</p>
+          <p>This is the first process step.</p>
+          <p>The next step is <a>PS2a</a> for audio description or <a>PS2b</a> for dubbing.</p>
+        </section>
+        <section>
+          <h3><dfn>PS2a</dfn>. Describe images (AD)</h3>
+          <p>This step is in the Audio Description workflow only.</p>
+          <p>The data input to this step is a set of timed <a>events</a>.</p>
+          <p>The data output of this step is a pre-recording timed text script corresponding to the descriptions.</p>
+          <p>In this step, a set of descriptions are written to fit within the identified times.</p>
+          <p>The previous step is <a>PS1</a>.</p>
+          <p>The next step is <a>PS3</a>.</p>
+        </section>
+        <section>
+          <h3><dfn>PS2b</dfn>. Transcribe original text (DUB)</h3>
+          <p>This step is in the Dubbing workflow only.</p>
+          <p>The data input to this step is a set of timed <a>events</a>.</p>
+          <p>The data output of this step is timed text corresponding to the original language.</p>
+          <p>In this step, the following actions are performed:</p>
+          <ul>
+            <li>Dialogue is transcribed in the original language to create a source transcription text.</li>
+            <li>The dialogue events are notated with character information and other annotations.</li>
+            <li>Localization notes are generated to guide further adaptation.</li>
+          </ul>
+          <p>The previous step is <a>PS1</a>.</p>
+          <p>The next step is <a>PS2c</a>.</p>
+        </section>
+        <section>
+          <h3><dfn>PS2c</dfn>. Translate text (DUB)</h3>
+          <p>This step is in the Dubbing workflow only.</p>
+          <p>The data input to this step is timed text in the original language,
+            including character information, annotations and localization notes.</p>
+          <p>The data output of this step is timed text corresponding to both the original language
+            and the dubbing (translation) language.</p>
+          <p>In this step, the dialogue is translated to a target language.</p>
+          <p>The previous step is <a>PS2b</a>.</p>
+          <p>The next step is <a>PS2d</a>.</p>
+        </section>
+        <section>
+          <h3><dfn>PS2d</dfn>. Adapt text (DUB)</h3>
+          <p>This step is in the Dubbing workflow only.</p>
+          <p>The data input to this step is timed text in both the original language,
+            including character information, annotations and localization notes, and
+            the translated dialogue in the dubbing (translation) language.</p>
+          <p>The data output of this step is a pre-recording timed text script
+            corresponding to both the original language
+            and the dubbing (translation) language adapted as needed for recording.</p>
+          <p>In this step, the translation is adapted for dubbing;
+            for example matching the actor's lip movements
+            and considering reading speeds and shot changes.</p>
+          <p>The previous step is <a>PS2c</a>.</p>
+          <p>The next step is <a>PS3</a>.</p>
+        </section>
+        <section>
+          <h3><dfn>PS3</dfn>. Voice recording or synthesize audio</h3>
+          <p>This step is in both the Audio Description and Dubbing workflows.</p>
+          <p>The data input to this step is a pre-recording timed text script.</p>
+          <p>The data output of this step is an audio rendering of the script.</p>
+          <p>In this step, an audio rendition of the script is generated
+            either by using an actor or voicer and recording the speech
+            or by synthesizing the audio description by using a text to speech system.
+            For audio descriptions, this is typically a mono audio track
+            that may be delivered as a single track that is the same duration as the programme
+            or as a set of short audio tracks each beginning at a defined time.
+            Alternatively it can be a single track with each short description concatenated
+            to remove unnecessary silences.</p>
+          <p>The previous steps are <a>PS2a</a> or <a>PS2d</a>.</p>
+          <p>The next steps are <a>PS4</a> and/or <a>PS5</a>.</p>
+        </section>
+        <section>
+          <h3><dfn>PS4</dfn>. Define audio mixing instructions (AD)</h3>
+          <p>This step is in the Audio Description workflow only.</p>
+          <p>The data inputs to this step are the pre-recording timed text script and the rendered audio.</p>
+          <p>The data output of this step is post-recording script including audio mixing instructions.</p>
+          <p>In this step, the following actions are performed:</p>
+          <ul>
+            <li>Select a horizontal pan position to apply to the audio rendition
+                of the description when mixing with the main programme audio.
+                This is typically a single value that applies to each description.</li>
+            <li>Select the amount by which to lower the main programme audio
+                prior to mixing in the description audio.
+                This is typically defined as a curve defined by a set of moments in time
+                and fade levels to apply,
+                with an interpolation algorithm to vary the levels between each moment in time.</li>
+          </ul>
+          <p>The previous step is <a>PS3</a>.</p>
+          <p>This step can be followed by, or be done in parallel with, <a>PS5</a>, or it can be the final step.</p>
+        </section>
+        <section>
+          <h3><dfn>PS5</dfn>. Edit script to match performance </h3>
+          <p>This step is in both the Audio Description and Dubbing workflows.</p>
+          <p>The data inputs to this step are the pre-recording timed text script and the rendered audio.</p>
+          <p>The data output of this step is an accurate post-recording script matching the recorded audio,
+            sometimes called an <dfn>As-recorded script</dfn>.</p>
+          <p>In this step, the script is adjusted based on changes made during the audio recording.</p>
+          <p>The previous step is <a>PS3</a>.</p>
+          <p>This step can be followed by, or be done in parallel with, <a>PS4</a>, or it can be the final step.</p>
+        </section>
+
+      </section>
     <section>
         <h2>Requirements</h2>
         <p>The following table lists the requirements at each stage of the workflow:</p>
