@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="10.935696 10.093176 549.4725 608.2126" width="100%">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="10.935696 10.093176 549.4725 608.2126" width="100%">
   <defs>
     <font-face font-family="Helvetica" font-size="10" units-per-em="1000" underline-position="-75.68359" underline-thickness="49.316406" slope="0" x-height="522.9492" cap-height="717.28516" ascent="770.0195" descent="-229.98047" font-weight="400">
       <font-face-src>
@@ -205,7 +205,7 @@
         <line x1="368.1879" y1="43.114913" x2="368.18754" y2="51.716596" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
       </g>
     </g>
-    <g id="Graphic_36" role="list>
+    <g id="Graphic_36" role="list">
         <rect x="34.1916" y="45.3937" width="118.11023" height="172.15747" fill="white"/>
         <rect x="34.1916" y="45.3937" width="118.11023" height="172.15747" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
         <text transform="translate(39.1916 50.3937)" fill="black">
@@ -236,4 +236,5 @@
             </text>
         </g>
     </g>
+  </g>
 </svg>
