@@ -113,7 +113,7 @@
         <section>
           <h3>Identify key times in programme dialog, mark gaps: <dfn data-lt="PS1">Process Step 1</dfn>. </h3>
           <p>This step is in both the Audio Description and Dubbing workflows.</p>
-          <p>The data output of this step is a set of <a>events</a>.</p>
+          <p>The data output of this step is a set of <a>script events</a>.</p>
           <p>In this step, the programme audio track is automatically or manually processed
             to identify intervals either with spoken dialogs
             to be translated or within which description audio may be inserted.</p>
@@ -123,7 +123,7 @@
         <section>
           <h3>Describe images (AD): <dfn data-lt="PS2a">Process Step 2a</dfn>. </h3>
           <p>This step is in the Audio Description workflow only.</p>
-          <p>The data input to this step is a set of timed <a>events</a>.</p>
+          <p>The data input to this step is a set of timed <a>script events</a>.</p>
           <p>The data output of this step is a pre-recording timed text script corresponding to the descriptions.</p>
           <p>In this step, a set of descriptions are written to fit within the identified times.</p>
           <p>The previous step is <a>PS1</a>.</p>
@@ -132,12 +132,12 @@
         <section>
           <h3>Transcribe original text (DUB): <dfn data-lt="PS2b">Process Step 2b</dfn>. </h3>
           <p>This step is in the Dubbing workflow only.</p>
-          <p>The data input to this step is a set of timed <a>events</a>.</p>
+          <p>The data input to this step is a set of <a>script events</a>.</p>
           <p>The data output of this step is timed text corresponding to the original language.</p>
           <p>In this step, the following actions are performed:</p>
           <ul>
             <li>Dialogue is transcribed in the original language to create a source transcription text.</li>
-            <li>The dialogue events are notated with character information and other annotations.</li>
+            <li>The dialogue script events are notated with character information and other annotations.</li>
             <li>Localization notes are generated to guide further adaptation.</li>
           </ul>
           <p>The previous step is <a>PS1</a>.</p>
@@ -250,12 +250,11 @@
                     <td>R2</td>
                     <td><a>PS1</a></td>
                     <td><p>A document must be able to define a list of intervals,
-                        each called <dfn>event</dfn>,
+                        each called <dfn>script event</dfn>,
                         defined by a begin time and an end time,
                         either matching a dialogue spoken by a single character or matching on-screen text from the programme,
                         or that is an opportunity for adding descriptions.</p>
-                        <p class="ednote">In ADPT, the requirement for intervals was distinct from the requirements their contents - any reason not to do the same here?</p>
-                        <p class="ednote">Is "event" the best name? Do nested events need a different term?</p>
+                        <p class="note">Within a <a>script event</a>, there may be other timed content, whose times are relative to the beginning of the script event.</p>
                     </td>
                 </tr>
                 <tr>
@@ -296,15 +295,15 @@
                 <tr>
                     <td>R7</td>
                     <td><a>PS2b</a></td>
-                    <td><p>A document must be able to associate a unique character with a given <a>event</a>,
-                        when the event corresponds to a dialogue.</p></td>
+                    <td><p>A document must be able to associate a unique character with a given <a>script event</a>,
+                        when the script event corresponds to a dialogue.</p></td>
                 </tr>
                 <tr>
                     <td>R8</td>
                     <td><a>PS2b</a></td>
                     <td><p>A document must be able to associate text content,
                         called <dfn>original content</dfn>,
-                        with each <a>event</a>,
+                        with each <a>script event</a>,
                         corresponding to the content of the dialogue or on-screen text.
                         The language shall be identified too.</p></td>
                 </tr>
@@ -316,27 +315,27 @@
                 <tr>
                     <td>R10</td>
                     <td><a>PS2b</a></td>
-                    <td><p>A document shall support associating rendering styles with an <a>event</a>.</p></td>
+                    <td><p>A document shall support associating rendering styles with a <a>script event</a>.</p></td>
                 </tr>
                 <tr>
                     <td>R11</td>
                     <td><a>PS2b</a></td>
-                    <td><p>A document must be able to optionally associate a human-readable string with an <a>event</a>,
-                        providing annotation of the event.</p></td>
+                    <td><p>A document must be able to optionally associate a human-readable string with an <a>script event</a>,
+                        providing annotation of the script event.</p></td>
                     </tr>
                 <tr>
                     <td>R12</td>
                     <td><a>PS2b</a></td>
-                    <td><p>A document must be able, for an <a>event</a> corresponding to a dialogue,
+                    <td><p>A document must be able, for a <a>script event</a> corresponding to a dialogue,
                         to optionally indicate if the character is in the picture,
                         out of the picture or transitioning in or out of the picture.</p></td>
                 </tr>
                 <tr>
                     <td>R13</td>
                     <td><a>PS2b</a></td>
-                    <td><p>A document shall support optionally annotating each <a>event</a>
-                        with an indication of the type of event
-                        (e.g. when the event corresponds to on-screen text,
+                    <td><p>A document shall support optionally annotating each <a>script event</a>
+                        with an indication of the type of script event
+                        (e.g. when the script event corresponds to on-screen text,
                         if the text corresponds to &quot;Credits&quot; or &quot;Title&quot;;
                         or if the dialogue text is audible or not),
                         and optionally additional human readable text.</p></td>
@@ -344,7 +343,7 @@
                 <tr>
                     <td>R14</td>
                     <td><a>PS2c</a></td>
-                    <td><p>A document must be able to optionally associate with an <a>event</a>
+                    <td><p>A document must be able to optionally associate with a <a>script event</a>
                         a translation of the <a>original content</a> in a different, identified language.</p></td>
                 </tr>
                 <tr>
