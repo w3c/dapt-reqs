@@ -133,7 +133,7 @@
         <rect x="135.45144" y="490.0774" width="118.11023" height="33.95279" stroke="black" stroke-linecap="butt" stroke-linejoin="round" stroke-width="1"/>
         <text transform="translate(140.45144 495.0538)" fill="black">
           <tspan font-family="Helvetica" font-size="10" font-weight="400" fill="black" x="13.749939" y="10">PS4. Define audio </tspan>
-          <tspan font-family="Helvetica" font-size="10" font-weight="400" fill="black" x="1.2645874" y="22">mixing instructions (AD)</tspan>
+          <tspan font-family="Helvetica" font-size="10" font-weight="400" fill="black" x="13.2645874" y="22">mixing instructions</tspan>
         </text></a>
       </g>
 
