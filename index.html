@@ -224,8 +224,8 @@
     <section>
         <h2>Requirements</h2>
         <p>The following table lists the requirements at each stage of the workflow:</p>
-        <p class="ednote">TODO: Add [[media-accessibility-reqs]]</p>
-        <table class="simple">
+
+        <table class="data">
             <caption>Table of requirements, each having a unique requirement number,
               links to the workflow process stages from which it arises,
               and a detailed description.</caption>
@@ -260,13 +260,23 @@
                         either matching a dialogue spoken by a single character or matching on-screen text from the programme,
                         or that is an opportunity for adding descriptions.</p>
                         <p class="note">Within a <a>script event</a>, there may be other timed content, whose times are relative to the beginning of the script event.</p>
+                        <p>[[media-accessibility-reqs]] DV-2 Render descriptions in a time-synchronized manner, using the primary media resource as the timebase master.</p>
                     </td>
                 </tr>
                 <tr>
                     <td>R3</td>
                     <td><a>PS2a</a></td>
                     <td><p>A document must be able to incorporate description text to be voiced,
-                        each description located within a timed interval defined by a begin time and an end time.</p></td>
+                        each description located within a timed interval defined by a begin time and an end time.</p>
+                        <div>[[media-accessibility-reqs]] TVD-2 TVDs need to be provided in a format that contains the following information:
+                          <ol type="a">
+                            <li>start time, text per description cue (the duration is determined dynamically, though an end time could provide a cut point)</li>
+                            <li>possibly a speech-synthesis markup to improve quality of the description (existing speech synthesis markups include SSML ([[speech-synthesis11]]) and CSS 3 Speech Module ([[css-speech-1]]))</li>
+                            <li>accompanying metadata providing labeling for speakers, language, etc. and</li>
+                            <li>visual style markup.</li>
+                          </ol>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>R4</td>
@@ -287,7 +297,10 @@
                         what gender and age voice would be appropriate to voice the descriptions;
                         it is also feasible to include data used to improve the quality of text to speech synthesis,
                         such as phonetic descriptions of the text, intonation and emotion data etc.
-                        The format of any extensions for this purpose need not be defined.</p></td>
+                        The format of any extensions for this purpose need not be defined.</p>
+                        <p>[[media-accessibility-reqs]] DV-10 Allow the user to select from among different languages of descriptions, if available, even if they are different from the language of the main soundtrack.</p>
+                        <p>[[media-accessibility-reqs]] DV-13 Support metadata, such as   copyright information, usage rights, language, etc.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>R6</td>
@@ -356,7 +369,10 @@
                     <td><a>PS3</a></td>
                     <td><p>A document must be able to reference audio tracks either
                         included as binary data within the document
-                        or separately.</p></td>
+                        or separately.</p>
+                      <p>[[media-accessibility-reqs]] DV-4 Support recordings of high quality speech as a track of the media resource, or as an external file.</p>
+                      <p>[[media-accessibility-reqs]] DV-9 Allow the author to use a codec which is optimized for voice only, rather than requiring the same codec as the original soundtrack.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>R16</td>
@@ -364,7 +380,9 @@
                     <td><p>A document must be able to associate a begin time
                         with the beginning of playback of each audio track,
                         for the case that multiple audio tracks are created,
-                        one per description.</p></td>
+                        one per description.</p>
+                        <p>[[media-accessibility-reqs]] DV-2 Render descriptions in a time-synchronized manner, using the primary media resource as the timebase master.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>R17</td>
@@ -372,14 +390,18 @@
                     <td><p>A document must be able to associate a begin time with a playback entry time
                         within an audio track,
                         for the case that a single audio track is generated
-                        that contains multiple segments of audio to be played back at different times.</p></td>
+                        that contains multiple segments of audio to be played back at different times.</p>
+                      <p>[[media-accessibility-reqs]] DV-2 Render descriptions in a time-synchronized manner, using the primary media resource as the timebase master.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>R18</td>
                     <td><a>PS4</a></td>
                     <td><p>A document must be able to associate a left/right pan value
                         with playback of each or every audio description.
-                        This value applies to the audio description prior to mixing with the main programme audio.</p></td>
+                        This value applies to the audio description prior to mixing with the main programme audio.</p>
+                      <p>[[media-accessibility-reqs]] DV-8 Allow the author to provide fade and pan controls to be accurately synchronized with the original soundtrack.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>R19</td>
@@ -388,7 +410,11 @@
                         that applies to the main programme audio prior to mixing with the audio description,
                         where that fade level curve is defined by
                         a set of pairs of level and times
-                        and an interpolation algorithm.</p></td>
+                        and an interpolation algorithm.</p>
+                        <p>[[media-accessibility-reqs]] DV-5 Allow the author to independently adjust the volumes of the audio description and original soundtracks where these are available as separate audio channel resources.</p>
+                        <p>[[media-accessibility-reqs]] DV-7 Permit smooth changes in volume rather than stepped changes. The degree and speed of volume change should be under user control.</p>
+                        <p>[[media-accessibility-reqs]] DV-8 Allow the author to provide fade and pan controls to be accurately synchronized with the original soundtrack.</p>
+                    </td>
                 </tr>
                 <tr>
                     <td>R20</td>
